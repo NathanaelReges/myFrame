@@ -4,13 +4,13 @@ Just requestAnimationFrame with steroids.
 
 
 **myFrame.onResponse(function, stage)**  
-&ensp;Request to call a function in the response frame.
- &ensp;&ensp; **function**
-&ensp;&ensp;&ensp;&ensp; The function to be called.
-&ensp;&ensp; **stage**
-&ensp;&ensp;&ensp;&ensp; The stage which the function will be called.
-&ensp;&ensp;&ensp;&ensp; "read" | "write"   defaults to "write".
-&ensp;&ensp;&ensp;&ensp; Functions in the read stage are called first so recalculate Style is not forced.
+&ensp;Request to call a function in the response frame.  
+&ensp;&ensp; **function**  
+&ensp;&ensp;&ensp;&ensp; The function to be called.  
+&ensp;&ensp; **stage**  
+&ensp;&ensp;&ensp;&ensp; The stage which the function will be called.  
+&ensp;&ensp;&ensp;&ensp; "read" | "write"   defaults to "write".  
+&ensp;&ensp;&ensp;&ensp; Functions in the read stage are called first so recalculate Style is not forced.  
  
 
 **myFrame.onNext(function, stage)**  
