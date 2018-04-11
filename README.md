@@ -1,7 +1,7 @@
 # myframe
 
 Just requestAnimationFrame with steroids.
-
+ 
 
 ### myFrame.requestResponse(function, stage)  
 &ensp;request to call a function in the response frame
