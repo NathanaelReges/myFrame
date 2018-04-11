@@ -1,48 +1,48 @@
 scripts['myFrame/testMyFrame.js'] = function testMyFrame () {
 
-    const requestResponse = scripts['myFrame/myFrame.js'].requestResponse
-    const requestNext = scripts['myFrame/myFrame.js'].requestNext
-    const requestLast = scripts['myFrame/myFrame.js'].requestLast
+    const onResponse = scripts['myFrame/myFrame.js'].onResponse
+    const onNext = scripts['myFrame/myFrame.js'].onNext
+    const onLast = scripts['myFrame/myFrame.js'].onLast
 
     let resultString = ''
 
 
     const arrayOfRequests = [
         ()=>{
-            requestResponse(() =>{
+            onResponse(() =>{
                 testResult(1, 1)
             }, 'read')
         },
         ()=>{
-            requestResponse(()=>{
+            onResponse(()=>{
                 testResult(1, 2)
             }, 'write')
         },
 
 
         ()=>{
-            requestNext(()=>{
+            onNext(()=>{
                 testResult(2, 1)
             }, 'read')
         },
         ()=>{
-            requestNext(()=>{
+            onNext(()=>{
                 testResult(2, 2)
 
-                requestNext(()=>{
+                onNext(()=>{
                     testResult(3, 2)
                 })
 
-                requestNext(()=>{
+                onNext(()=>{
                     testResult(3, 3)
                 })
 
-                requestLast(()=>{
+                onLast(()=>{
                     testResult(4, 3)
                     showResult()
                 })
 
-                requestNext(()=>{
+                onNext(()=>{
                     testResult(3, 1)
                 }, 'read')
 
@@ -51,21 +51,22 @@ scripts['myFrame/testMyFrame.js'] = function testMyFrame () {
     
 
         ()=>{
-            requestLast(()=>{
+            onLast(()=>{
                 testResult(4, 1)
             }, 'read')
         },
         ()=>{
-            requestLast(()=>{
+            onLast(()=>{
                 testResult(4, 2)
             }, 'write')
         }
     ]
 
 
-    console.log("DISCLAIMER: In good contditions of tremperature and presssure the diference in time expected " +
-        "for diferente animationFrames will match and as far as I know there isn't any other way to detect " +
-        "if two functions were called in diferent frames so that will have to do.")
+    console.log("In good conditions of temperature and pressure " + 
+        "the difference in time expected for different animationFrames will match and the test will pass. " + 
+        "As far as I know there isn't any other way to detect if two functions were called in different " + 
+        "frames so that will have to do.")
    
 
 

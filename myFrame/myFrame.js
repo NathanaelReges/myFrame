@@ -7,15 +7,15 @@ scripts['myFrame/myFrame.js'] = (function createMyFrame () {
     const module = {}
 
 
-    module.requestResponse = (fun, stage) => {
+    module.onResponse = (fun, stage) => {
         add(arrayOfFrameObjs[0], fun, stage)
     }
 
-    module.requestNext = (fun, stage) => {
+    module.onNext = (fun, stage) => {
         add(arrayOfFrameObjs[1], fun, stage)
     }
 
-    module.requestLast = (fun, stage) => {
+    module.onLast = (fun, stage) => {
         add(arrayOfFrameObjs[2], fun, stage)
     }
     
