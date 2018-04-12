@@ -63,7 +63,7 @@ scripts['myFrame/testMyFrame.js'] = function testMyFrame () {
     ]
 
 
-    console.log("In good conditions of temperature and pressure " + 
+    console.log("With standart conditions for temperature and pressure " + 
         "the difference in time expected for different animationFrames will match and the test will pass. " + 
         "As far as I know there isn't any other way to detect if two functions were called in different " + 
         "frames so that will have to do.")
@@ -84,15 +84,13 @@ scripts['myFrame/testMyFrame.js'] = function testMyFrame () {
 
             
         if(currResult.frameNumber < lastResult.frameNumber){
-            console.log(currResult)
-            throw "Frame in wrong order"
+            throw ("Frame in wrong order" + currResult)
 
         }
         else if(currResult.frameNumber > lastResult.frameNumber){
             
             if(currResult.time - lastResult.time < 10){
-                console.log(currResult)
-                throw "This fun should be executed in another frame"
+                throw ("This fun should be executed in another frame" + currResult)
 
             }
             else {
@@ -103,16 +101,13 @@ scripts['myFrame/testMyFrame.js'] = function testMyFrame () {
         else {
             
             if(currResult.funNumber < lastResult.funNumber){
-                console.log(currResult)
-                throw "Function in wrong order"
-
+                throw ("Function in wrong order" + currResult)
                 
             }
             else if(currResult.funNumber > lastResult.funNumber){
                 
                 if(currResult.time - lastResult.time > 10){
-                    console.log(currResult)
-                    throw "This fun either took too long or was executed in another frame but shouldn't be"
+                    throw ("This fun either took too long or was executed in another frame but shouldn't be" + currResult)
     
                 }
                 else {
@@ -122,8 +117,8 @@ scripts['myFrame/testMyFrame.js'] = function testMyFrame () {
             }
             else {
                 console.log(currResult)
-                throw "For some reason this function was executed twice"
-
+                throw ("For some reason this function was executed twice" + currResult)
+            
             }
 
         }
