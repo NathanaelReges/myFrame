@@ -1,4 +1,4 @@
-# myframe
+# myFrame
 
 Just requestAnimationFrame with steroids. It is meant to help doing progressive loading of the page so showing content to the user as soon as possible and improving responsiveness.  
 <br/>
