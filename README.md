@@ -1,6 +1,6 @@
 # myFrame
 
-Just requestAnimationFrame with steroids. It is meant to help doing progressive loading of the page so showing content to the user as soon as possible and improving responsiveness.  
+requestAnimationFrame with steroids. It is meant to help on progressive loading a web page, showing content to the user as soon as possible.  
 <br/>
 **myFrame.onResponse(function, stage)**  
 &ensp;Request to call a function in the response frame.  
